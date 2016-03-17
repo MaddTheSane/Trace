@@ -13,6 +13,18 @@
 		C95ED0ED1C9B28F700208FF5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C95ED0EC1C9B28F700208FF5 /* Assets.xcassets */; };
 		C95ED0F01C9B28F700208FF5 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = C95ED0EE1C9B28F700208FF5 /* MainMenu.xib */; };
 		C95ED0FB1C9B28F700208FF5 /* TraceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95ED0FA1C9B28F700208FF5 /* TraceTests.swift */; };
+		C95ED1081C9B294700208FF5 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95ED1071C9B294700208FF5 /* Camera.swift */; };
+		C95ED10A1C9B295F00208FF5 /* Vector3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95ED1091C9B295F00208FF5 /* Vector3D.swift */; };
+		C95ED10C1C9B297000208FF5 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95ED10B1C9B297000208FF5 /* Scene.swift */; };
+		C95ED1121C9B298600208FF5 /* Cylinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95ED10D1C9B298600208FF5 /* Cylinder.swift */; };
+		C95ED1131C9B298600208FF5 /* Plane.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95ED10E1C9B298600208FF5 /* Plane.swift */; };
+		C95ED1141C9B298600208FF5 /* Quadric.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95ED10F1C9B298600208FF5 /* Quadric.swift */; };
+		C95ED1151C9B298600208FF5 /* Shape.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95ED1101C9B298600208FF5 /* Shape.swift */; };
+		C95ED1161C9B298600208FF5 /* Sphere.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95ED1111C9B298600208FF5 /* Sphere.swift */; };
+		C95ED11B1C9B299700208FF5 /* DirectLight.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95ED1171C9B299700208FF5 /* DirectLight.swift */; };
+		C95ED11C1C9B299700208FF5 /* Light.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95ED1181C9B299700208FF5 /* Light.swift */; };
+		C95ED11D1C9B299700208FF5 /* PointLight.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95ED1191C9B299700208FF5 /* PointLight.swift */; };
+		C95ED11E1C9B299700208FF5 /* SpotLight.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95ED11A1C9B299700208FF5 /* SpotLight.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +48,18 @@
 		C95ED0F61C9B28F700208FF5 /* TraceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TraceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C95ED0FA1C9B28F700208FF5 /* TraceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraceTests.swift; sourceTree = "<group>"; };
 		C95ED0FC1C9B28F700208FF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C95ED1071C9B294700208FF5 /* Camera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
+		C95ED1091C9B295F00208FF5 /* Vector3D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector3D.swift; sourceTree = "<group>"; };
+		C95ED10B1C9B297000208FF5 /* Scene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
+		C95ED10D1C9B298600208FF5 /* Cylinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cylinder.swift; sourceTree = "<group>"; };
+		C95ED10E1C9B298600208FF5 /* Plane.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Plane.swift; sourceTree = "<group>"; };
+		C95ED10F1C9B298600208FF5 /* Quadric.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quadric.swift; sourceTree = "<group>"; };
+		C95ED1101C9B298600208FF5 /* Shape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shape.swift; sourceTree = "<group>"; };
+		C95ED1111C9B298600208FF5 /* Sphere.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sphere.swift; sourceTree = "<group>"; };
+		C95ED1171C9B299700208FF5 /* DirectLight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectLight.swift; sourceTree = "<group>"; };
+		C95ED1181C9B299700208FF5 /* Light.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Light.swift; sourceTree = "<group>"; };
+		C95ED1191C9B299700208FF5 /* PointLight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointLight.swift; sourceTree = "<group>"; };
+		C95ED11A1C9B299700208FF5 /* SpotLight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotLight.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,11 +101,16 @@
 		C95ED0E41C9B28F700208FF5 /* Trace */ = {
 			isa = PBXGroup;
 			children = (
+				C95ED1061C9B292600208FF5 /* Lights */,
+				C95ED1051C9B292000208FF5 /* Shapes */,
+				C95ED1071C9B294700208FF5 /* Camera.swift */,
 				C95ED0E51C9B28F700208FF5 /* AppDelegate.swift */,
 				C95ED0E71C9B28F700208FF5 /* Document.swift */,
+				C95ED10B1C9B297000208FF5 /* Scene.swift */,
+				C95ED1091C9B295F00208FF5 /* Vector3D.swift */,
 				C95ED0E91C9B28F700208FF5 /* Document.xib */,
-				C95ED0EC1C9B28F700208FF5 /* Assets.xcassets */,
 				C95ED0EE1C9B28F700208FF5 /* MainMenu.xib */,
+				C95ED0EC1C9B28F700208FF5 /* Assets.xcassets */,
 				C95ED0F11C9B28F700208FF5 /* Info.plist */,
 			);
 			path = Trace;
@@ -94,6 +123,29 @@
 				C95ED0FC1C9B28F700208FF5 /* Info.plist */,
 			);
 			path = TraceTests;
+			sourceTree = "<group>";
+		};
+		C95ED1051C9B292000208FF5 /* Shapes */ = {
+			isa = PBXGroup;
+			children = (
+				C95ED10D1C9B298600208FF5 /* Cylinder.swift */,
+				C95ED10E1C9B298600208FF5 /* Plane.swift */,
+				C95ED10F1C9B298600208FF5 /* Quadric.swift */,
+				C95ED1101C9B298600208FF5 /* Shape.swift */,
+				C95ED1111C9B298600208FF5 /* Sphere.swift */,
+			);
+			name = Shapes;
+			sourceTree = "<group>";
+		};
+		C95ED1061C9B292600208FF5 /* Lights */ = {
+			isa = PBXGroup;
+			children = (
+				C95ED1171C9B299700208FF5 /* DirectLight.swift */,
+				C95ED1181C9B299700208FF5 /* Light.swift */,
+				C95ED1191C9B299700208FF5 /* PointLight.swift */,
+				C95ED11A1C9B299700208FF5 /* SpotLight.swift */,
+			);
+			name = Lights;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,8 +249,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C95ED11D1C9B299700208FF5 /* PointLight.swift in Sources */,
+				C95ED1161C9B298600208FF5 /* Sphere.swift in Sources */,
 				C95ED0E81C9B28F700208FF5 /* Document.swift in Sources */,
+				C95ED1141C9B298600208FF5 /* Quadric.swift in Sources */,
+				C95ED1121C9B298600208FF5 /* Cylinder.swift in Sources */,
 				C95ED0E61C9B28F700208FF5 /* AppDelegate.swift in Sources */,
+				C95ED1151C9B298600208FF5 /* Shape.swift in Sources */,
+				C95ED11C1C9B299700208FF5 /* Light.swift in Sources */,
+				C95ED11E1C9B299700208FF5 /* SpotLight.swift in Sources */,
+				C95ED10C1C9B297000208FF5 /* Scene.swift in Sources */,
+				C95ED1081C9B294700208FF5 /* Camera.swift in Sources */,
+				C95ED10A1C9B295F00208FF5 /* Vector3D.swift in Sources */,
+				C95ED11B1C9B299700208FF5 /* DirectLight.swift in Sources */,
+				C95ED1131C9B298600208FF5 /* Plane.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
