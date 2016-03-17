@@ -9,10 +9,10 @@
 import Foundation
 
 public class PointLight : Light {
-	public var color: CGColor
+	public var color: HDRColor
 	public var position: Vector3D
 	
-	public init(color: CGColor, position: Vector3D) {
+	public init(color: HDRColor, position: Vector3D) {
 		self.color = color
 		self.position = position
 	}

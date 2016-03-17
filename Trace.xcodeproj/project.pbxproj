@@ -25,6 +25,7 @@
 		C95ED11C1C9B299700208FF5 /* Light.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95ED1181C9B299700208FF5 /* Light.swift */; };
 		C95ED11D1C9B299700208FF5 /* PointLight.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95ED1191C9B299700208FF5 /* PointLight.swift */; };
 		C95ED11E1C9B299700208FF5 /* SpotLight.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95ED11A1C9B299700208FF5 /* SpotLight.swift */; };
+		C95ED1201C9B38B100208FF5 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95ED11F1C9B38B100208FF5 /* Color.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		C95ED1181C9B299700208FF5 /* Light.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Light.swift; sourceTree = "<group>"; };
 		C95ED1191C9B299700208FF5 /* PointLight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointLight.swift; sourceTree = "<group>"; };
 		C95ED11A1C9B299700208FF5 /* SpotLight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotLight.swift; sourceTree = "<group>"; };
+		C95ED11F1C9B38B100208FF5 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 			children = (
 				C95ED1061C9B292600208FF5 /* Lights */,
 				C95ED1051C9B292000208FF5 /* Shapes */,
+				C95ED11F1C9B38B100208FF5 /* Color.swift */,
 				C95ED1071C9B294700208FF5 /* Camera.swift */,
 				C95ED0E51C9B28F700208FF5 /* AppDelegate.swift */,
 				C95ED0E71C9B28F700208FF5 /* Document.swift */,
@@ -257,6 +260,7 @@
 				C95ED0E61C9B28F700208FF5 /* AppDelegate.swift in Sources */,
 				C95ED1151C9B298600208FF5 /* Shape.swift in Sources */,
 				C95ED11C1C9B299700208FF5 /* Light.swift in Sources */,
+				C95ED1201C9B38B100208FF5 /* Color.swift in Sources */,
 				C95ED11E1C9B299700208FF5 /* SpotLight.swift in Sources */,
 				C95ED10C1C9B297000208FF5 /* Scene.swift in Sources */,
 				C95ED1081C9B294700208FF5 /* Camera.swift in Sources */,

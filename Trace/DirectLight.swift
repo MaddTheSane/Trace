@@ -10,10 +10,10 @@ import Foundation
 import Darwin
 
 public class DirectLight : Light {
-	public var color: CGColor
+	public var color: HDRColor
 	var direction: Vector3D
 	
-	public init(color: CGColor, direction: Vector3D) {
+	public init(color: HDRColor, direction: Vector3D) {
 		self.color = color
 		self.direction = direction.unit()
 	}

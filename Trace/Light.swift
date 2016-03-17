@@ -10,7 +10,7 @@ import Foundation
 
 /// Abstract class Light
 public protocol Light {
-	var color: CGColor { get set }
+	var color: HDRColor { get set }
 	
 	func normalToLight(point: Vector3D) -> Vector3D
 	
@@ -20,5 +20,5 @@ public protocol Light {
 }
 
 public extension Light {
-	public func getColor() -> CGColor { return color; }
+	public func getColor() -> HDRColor { return color; }
 }

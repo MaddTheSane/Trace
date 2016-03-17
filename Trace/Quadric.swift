@@ -38,28 +38,28 @@ public class Quadric : Shape {
 		return normal.unit()
 	}
 	
-	public func intersectRay(origin: Vector3D, ray: Vector3D) -> Double {
+	public func intersectRay(ray: Ray) -> Double {
 		// Calculate the positions of the camera and the ray relative to the quadric
-		let rCam:Vector3D = origin - position;
-		let rRay:Vector3D = ray;
+		let rCam = ray.o - position;
+		let rRay = ray.d;
 		
 		// Precalculate these values for our quadratic equation
-		let V1:Vector3D = rRay ⊗ rRay
-		let V2:Vector3D = 2 * Vector3D(x: rRay.x * rRay.y, y: rRay.y * rRay.z, z: rRay.x * rRay.z)
-		let V3:Vector3D = rCam ⊗ rRay
-		let V4:Vector3D = Vector3D(x: rRay.x * rCam.y + rCam.x * rRay.y, y: rCam.y * rRay.z + rRay.y * rCam.z, z: rCam.x * rRay.z + rRay.x * rCam.z)
-		let V5:Vector3D = rRay
-		let V6:Vector3D = rCam ⊗ rCam
-		let V7:Vector3D = 2 * Vector3D(x: rCam.x * rCam.y, y: rCam.y * rCam.z, z: rCam.x * rCam.z)
-		let V8:Vector3D = 2 * rCam;
+		let V1 = rRay ⊗ rRay
+		let V2 = 2 * Vector3D(x: rRay.x * rRay.y, y: rRay.y * rRay.z, z: rRay.x * rRay.z)
+		let V3 = rCam ⊗ rRay
+		let V4 = Vector3D(x: rRay.x * rCam.y + rCam.x * rRay.y, y: rCam.y * rRay.z + rRay.y * rCam.z, z: rCam.x * rRay.z + rRay.x * rCam.z)
+		let V5 = rRay
+		let V6 = rCam ⊗ rCam
+		let V7 = 2 * Vector3D(x: rCam.x * rCam.y, y: rCam.y * rCam.z, z: rCam.x * rCam.z)
+		let V8 = 2 * rCam;
 		
 		// Calculate the quadratic coefficients
-		let A: Double = equation.ABC() • V1 + equation.DEF() • V2
-		let B: Double = equation.ABC() • V3 + equation.DEF() • V4 + equation.GHI() • V5
-		let C: Double = equation.ABC() • V6 + equation.DEF() • V7 + equation.GHI() • V8 + equation.J
+		let A = equation.ABC() • V1 + equation.DEF() • V2
+		let B = equation.ABC() • V3 + equation.DEF() • V4 + equation.GHI() • V5
+		let C = equation.ABC() • V6 + equation.DEF() • V7 + equation.GHI() • V8 + equation.J
 		
 		// Calculate the root value for our quadratic formula
-		var root: Double = (B * B) - (A * C);
+		var root = (B * B) - (A * C);
 		
 		// No collision if the root is imaginary
 		if (root < 0) {
@@ -70,8 +70,8 @@ public class Quadric : Shape {
 		root = sqrt(root);
 		
 		// Calculate both intersections
-		let D1: Double = (-B + root)/A;
-		let D2: Double = (-B - root)/A;
+		let D1 = (-B + root)/A;
+		let D2 = (-B - root)/A;
 		
 		// Return closest intersection
 		if (D1 < D2) {

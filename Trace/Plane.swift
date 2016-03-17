@@ -25,7 +25,7 @@ public class Plane : Shape {
 		return normal
 	}
 	
-	public func intersectRay(origin: Vector3D, ray: Vector3D) -> Double {
-		return (d - normal • origin) / (normal • ray)
+	public func intersectRay(ray: Ray) -> Double {
+		return (d - normal • ray.o) / (normal • ray.d)
 	}
 }

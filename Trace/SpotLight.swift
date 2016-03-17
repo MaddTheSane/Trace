@@ -9,12 +9,12 @@
 import Foundation
 
 public class SpotLight : Light {
-	public var color: CGColor
+	public var color: HDRColor
 	var position: Vector3D
 	var direction: Vector3D
 	var angle: Double
 	
-	public init(color: CGColor, position: Vector3D, direction: Vector3D, angle: Double) {
+	public init(color: HDRColor, position: Vector3D, direction: Vector3D, angle: Double) {
 		self.color = color
 		self.position = position
 		self.direction = direction.unit()

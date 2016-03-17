@@ -35,19 +35,19 @@ public struct Vector3D : Equatable, CustomStringConvertible {
 
 public prefix func -(v: Vector3D) -> Vector3D { return Vector3D(x: -v.x, y: -v.y, z: -v.z) }
 
-public func +(lhs: Vector3D, rhs: Vector3D) -> Vector3D { return Vector3D(x: lhs.x + rhs.x, y: lhs.y + rhs.y, z: lhs.z + rhs.z) }
-public func -(lhs: Vector3D, rhs: Vector3D) -> Vector3D { return Vector3D(x: lhs.x - rhs.x, y: lhs.y - rhs.y, z: lhs.z - rhs.z) }
 public func *(lhs: Vector3D, rhs: Double) -> Vector3D { return Vector3D(x: lhs.x * rhs, y: lhs.y * rhs, z: lhs.z * rhs) }
 public func *(lhs: Double, rhs: Vector3D) -> Vector3D { return Vector3D(x: lhs * rhs.x, y: lhs * rhs.y, z: lhs * rhs.z) }
 public func /(lhs: Vector3D, rhs: Double) -> Vector3D { return Vector3D(x: lhs.x / rhs, y: lhs.y / rhs, z: lhs.z / rhs) }
+public func +(lhs: Vector3D, rhs: Vector3D) -> Vector3D { return Vector3D(x: lhs.x + rhs.x, y: lhs.y + rhs.y, z: lhs.z + rhs.z) }
+public func -(lhs: Vector3D, rhs: Vector3D) -> Vector3D { return Vector3D(x: lhs.x - rhs.x, y: lhs.y - rhs.y, z: lhs.z - rhs.z) }
 
-public func ==(lhs: Vector3D, rhs: Vector3D) -> Bool { return (lhs.x == rhs.x && lhs.y == rhs.y && lhs.z == rhs.z) }
-public func !=(lhs: Vector3D, rhs: Vector3D) -> Bool { return (lhs.x != rhs.x || lhs.y != rhs.y || lhs.z != rhs.z) }
+public func ==(lhs: Vector3D, rhs: Vector3D) -> Bool { return lhs.x == rhs.x && lhs.y == rhs.y && lhs.z == rhs.z }
+//public func !=(lhs: Vector3D, rhs: Vector3D) -> Bool { return (lhs.x != rhs.x || lhs.y != rhs.y || lhs.z != rhs.z) }
 
-public func +=(inout lhs: Vector3D, rhs: Vector3D) -> Vector3D { lhs.x += rhs.x; lhs.y += rhs.y; lhs.z += rhs.z; return lhs }
-public func -=(inout lhs: Vector3D, rhs: Vector3D) -> Vector3D { lhs.x -= rhs.x; lhs.y -= rhs.y; lhs.z -= rhs.z; return lhs }
 public func *=(inout lhs: Vector3D, rhs: Double) -> Vector3D { lhs.x *= rhs; lhs.y *= rhs; lhs.z *= rhs; return lhs }
 public func /=(inout lhs: Vector3D, rhs: Double) -> Vector3D { lhs.x /= rhs; lhs.y /= rhs; lhs.z /= rhs; return lhs }
+public func +=(inout lhs: Vector3D, rhs: Vector3D) -> Vector3D { lhs.x += rhs.x; lhs.y += rhs.y; lhs.z += rhs.z; return lhs }
+public func -=(inout lhs: Vector3D, rhs: Vector3D) -> Vector3D { lhs.x -= rhs.x; lhs.y -= rhs.y; lhs.z -= rhs.z; return lhs }
 
 infix operator • { associativity left precedence 150 }
 public func •(lhs: Vector3D, rhs: Vector3D) -> Double { return lhs.x * rhs.x + lhs.y * rhs.y + lhs.z * rhs.z }
@@ -57,3 +57,9 @@ public func ⨯(lhs: Vector3D, rhs: Vector3D) -> Vector3D { return Vector3D(x: l
 
 infix operator ⊗ { associativity left precedence 150 }
 public func ⊗(lhs: Vector3D, rhs: Vector3D) -> Vector3D { return Vector3D(x: lhs.x * rhs.x, y: lhs.y * rhs.y, z: lhs.z * rhs.z) }
+
+public struct Ray {
+	var o = Vector3D(), d = Vector3D(x: 1, y: 0, z: 0)
+}
+
+public func *(ray: Ray, dist: Double) -> Vector3D { return ray.o + dist * ray.d }
