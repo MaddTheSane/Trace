@@ -25,4 +25,8 @@ public class Scene : NSObject, BooleanType {
 	public var boolValue: Bool {
 		return camera != nil && shapes.count > 0 && (ambient != HDRColor.blackColor() || lights.count > 0)
 	}
+	
+	public func preview() -> NSImage {
+		return camera!.preview(resolution: (200,150))
+	}
 }

@@ -8,9 +8,9 @@
 
 import Foundation
 
-public class SpotLight : Light, Translatable {
+public class SpotLight : Light {
 	public var color: HDRColor
-	public var position: Vector3D
+	var position: Vector3D
 	var direction: Vector3D
 	var angle: Double
 	

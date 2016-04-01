@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10116" systemVersion="15A278b" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10116"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner">
+            <connections>
+                <outlet property="connection" destination="YdM-We-ckf" id="on0-CL-GNJ"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="196" y="240" width="480" height="270"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1200"/>
+            <view key="contentView" id="EiT-Mj-1SZ">
+                <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YdM-We-ckf" customClass="cameraView" customModule="Trace" customModuleProvider="target">
+                        <rect key="frame" x="20" y="20" width="440" height="230"/>
+                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="NNc-nG-Jao"/>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="YdM-We-ckf" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="20" id="92r-Nk-dkw"/>
+                    <constraint firstAttribute="bottom" secondItem="YdM-We-ckf" secondAttribute="bottom" constant="20" id="Efz-l6-UPi"/>
+                    <constraint firstItem="YdM-We-ckf" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="20" id="R1D-YW-hjX"/>
+                    <constraint firstAttribute="trailing" secondItem="YdM-We-ckf" secondAttribute="trailing" constant="20" id="W0J-Nt-RzY"/>
+                </constraints>
+            </view>
+            <point key="canvasLocation" x="313" y="470"/>
+        </window>
+    </objects>
+</document>

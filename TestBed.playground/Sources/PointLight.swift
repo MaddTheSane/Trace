@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class PointLight : Light, Translatable {
+public class PointLight : Light {
 	public var color: HDRColor
 	public var position: Vector3D
 	

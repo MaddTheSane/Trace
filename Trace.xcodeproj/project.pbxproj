@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C953C34E1C9B927D00CA1C9B /* ShowPreview.xib in Resources */ = {isa = PBXBuildFile; fileRef = C953C3501C9B927D00CA1C9B /* ShowPreview.xib */; };
 		C95ED0E61C9B28F700208FF5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95ED0E51C9B28F700208FF5 /* AppDelegate.swift */; };
 		C95ED0E81C9B28F700208FF5 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95ED0E71C9B28F700208FF5 /* Document.swift */; };
 		C95ED0EB1C9B28F700208FF5 /* Document.xib in Resources */ = {isa = PBXBuildFile; fileRef = C95ED0E91C9B28F700208FF5 /* Document.xib */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C953C34F1C9B927D00CA1C9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ShowPreview.xib; sourceTree = "<group>"; };
 		C95ED0E21C9B28F700208FF5 /* Trace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Trace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C95ED0E51C9B28F700208FF5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C95ED0E71C9B28F700208FF5 /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 		C95ED1191C9B299700208FF5 /* PointLight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointLight.swift; sourceTree = "<group>"; };
 		C95ED11A1C9B299700208FF5 /* SpotLight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotLight.swift; sourceTree = "<group>"; };
 		C95ED11F1C9B38B100208FF5 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		C95ED1221C9B6FDB00208FF5 /* TestBed.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = TestBed.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +88,7 @@
 		C95ED0D91C9B28F700208FF5 = {
 			isa = PBXGroup;
 			children = (
+				C95ED1221C9B6FDB00208FF5 /* TestBed.playground */,
 				C95ED0E41C9B28F700208FF5 /* Trace */,
 				C95ED0F91C9B28F700208FF5 /* TraceTests */,
 				C95ED0E31C9B28F700208FF5 /* Products */,
@@ -112,6 +116,7 @@
 				C95ED10B1C9B297000208FF5 /* Scene.swift */,
 				C95ED1091C9B295F00208FF5 /* Vector3D.swift */,
 				C95ED0E91C9B28F700208FF5 /* Document.xib */,
+				C953C3501C9B927D00CA1C9B /* ShowPreview.xib */,
 				C95ED0EE1C9B28F700208FF5 /* MainMenu.xib */,
 				C95ED0EC1C9B28F700208FF5 /* Assets.xcassets */,
 				C95ED0F11C9B28F700208FF5 /* Info.plist */,
@@ -235,6 +240,7 @@
 				C95ED0ED1C9B28F700208FF5 /* Assets.xcassets in Resources */,
 				C95ED0EB1C9B28F700208FF5 /* Document.xib in Resources */,
 				C95ED0F01C9B28F700208FF5 /* MainMenu.xib in Resources */,
+				C953C34E1C9B927D00CA1C9B /* ShowPreview.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +295,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		C953C3501C9B927D00CA1C9B /* ShowPreview.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C953C34F1C9B927D00CA1C9B /* Base */,
+			);
+			name = ShowPreview.xib;
+			sourceTree = "<group>";
+		};
 		C95ED0E91C9B28F700208FF5 /* Document.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -457,6 +471,7 @@
 				C95ED1011C9B28F700208FF5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C95ED1021C9B28F700208FF5 /* Build configuration list for PBXNativeTarget "TraceTests" */ = {
 			isa = XCConfigurationList;
@@ -465,6 +480,7 @@
 				C95ED1041C9B28F700208FF5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

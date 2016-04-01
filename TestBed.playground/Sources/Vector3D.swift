@@ -9,15 +9,22 @@
 import Foundation
 
 /**
- * A 3 dimensional vector class that supports many useful Vector operations:
- * - Negation
- * - Addition & Subtraction
- * - Division & multiplication by Double
- * - Dot and cross products
- * - Normalization
- */
+* A 3 dimensional vector class that supports many useful Vector operations:
+*
+* - Negation
+* - Addition & Subtraction
+* - Division & multiplication by Double
+* - Dot and cross products
+* - Normalization
+*/
 public struct Vector3D : Equatable, CustomStringConvertible {
 	public var x = 0.0, y = 0.0, z = 0.0
+	
+	public init(_ x: Double = 0, _ y: Double = 0, _ z: Double = 0) {
+		self.x = x
+		self.y = y
+		self.z = z
+	}
 	
 	public var description: String {
 		return String(format: "(%.2f, %.2f, %.2f)", x, y, z)
@@ -32,13 +39,13 @@ public struct Vector3D : Equatable, CustomStringConvertible {
 	public func unit() -> Vector3D { return self/len() }
 }
 
-public prefix func -(v: Vector3D) -> Vector3D { return Vector3D(x: -v.x, y: -v.y, z: -v.z) }
+public prefix func -(v: Vector3D) -> Vector3D { return Vector3D(-v.x, -v.y, -v.z) }
 
-public func *(lhs: Vector3D, rhs: Double) -> Vector3D { return Vector3D(x: lhs.x * rhs, y: lhs.y * rhs, z: lhs.z * rhs) }
-public func *(lhs: Double, rhs: Vector3D) -> Vector3D { return Vector3D(x: lhs * rhs.x, y: lhs * rhs.y, z: lhs * rhs.z) }
-public func /(lhs: Vector3D, rhs: Double) -> Vector3D { return Vector3D(x: lhs.x / rhs, y: lhs.y / rhs, z: lhs.z / rhs) }
-public func +(lhs: Vector3D, rhs: Vector3D) -> Vector3D { return Vector3D(x: lhs.x + rhs.x, y: lhs.y + rhs.y, z: lhs.z + rhs.z) }
-public func -(lhs: Vector3D, rhs: Vector3D) -> Vector3D { return Vector3D(x: lhs.x - rhs.x, y: lhs.y - rhs.y, z: lhs.z - rhs.z) }
+public func *(lhs: Vector3D, rhs: Double) -> Vector3D { return Vector3D(lhs.x * rhs, lhs.y * rhs, lhs.z * rhs) }
+public func *(lhs: Double, rhs: Vector3D) -> Vector3D { return Vector3D(lhs * rhs.x, lhs * rhs.y, lhs * rhs.z) }
+public func /(lhs: Vector3D, rhs: Double) -> Vector3D { return Vector3D(lhs.x / rhs, lhs.y / rhs, lhs.z / rhs) }
+public func +(lhs: Vector3D, rhs: Vector3D) -> Vector3D { return Vector3D(lhs.x + rhs.x, lhs.y + rhs.y, lhs.z + rhs.z) }
+public func -(lhs: Vector3D, rhs: Vector3D) -> Vector3D { return Vector3D(lhs.x - rhs.x, lhs.y - rhs.y, lhs.z - rhs.z) }
 
 public func ==(lhs: Vector3D, rhs: Vector3D) -> Bool { return lhs.x == rhs.x && lhs.y == rhs.y && lhs.z == rhs.z }
 //public func !=(lhs: Vector3D, rhs: Vector3D) -> Bool { return (lhs.x != rhs.x || lhs.y != rhs.y || lhs.z != rhs.z) }
@@ -52,27 +59,13 @@ infix operator • { associativity left precedence 150 }
 public func •(lhs: Vector3D, rhs: Vector3D) -> Double { return lhs.x * rhs.x + lhs.y * rhs.y + lhs.z * rhs.z }
 
 infix operator ⨯ { associativity left precedence 150 }
-public func ⨯(lhs: Vector3D, rhs: Vector3D) -> Vector3D { return Vector3D(x: lhs.y * rhs.z - lhs.z * rhs.y, y: lhs.z * rhs.x - lhs.x * rhs.z, z: lhs.x * rhs.y - lhs.y * rhs.x) }
+public func ⨯(lhs: Vector3D, rhs: Vector3D) -> Vector3D { return Vector3D(lhs.y * rhs.z - lhs.z * rhs.y, lhs.z * rhs.x - lhs.x * rhs.z, lhs.x * rhs.y - lhs.y * rhs.x) }
 
 infix operator ⊗ { associativity left precedence 150 }
-public func ⊗(lhs: Vector3D, rhs: Vector3D) -> Vector3D { return Vector3D(x: lhs.x * rhs.x, y: lhs.y * rhs.y, z: lhs.z * rhs.z) }
+public func ⊗(lhs: Vector3D, rhs: Vector3D) -> Vector3D { return Vector3D(lhs.x * rhs.x, lhs.y * rhs.y, lhs.z * rhs.z) }
 
 public struct Ray {
-	var o = Vector3D(), d = Vector3D(x: 1, y: 0, z: 0)
+	var o = Vector3D(), d = Vector3D(1, 0, 0)
 }
 
 public func *(ray: Ray, dist: Double) -> Vector3D { return ray.o + dist * ray.d }
-
-
-public protocol Translatable {
-	var position: Vector3D { get set }
-}
-
-public extension Translatable {
-	public mutating func translate(x: Double, _ y: Double, _ z: Double) {
-		position += Vector3D(x: x, y: y, z: z)
-	}
-}
-
-
-

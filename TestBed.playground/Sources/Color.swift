@@ -19,18 +19,21 @@ import Cocoa
 * - glow color
 */
 public struct ColorData {
-	var ambient = HDRColor()
-	var diffuse = HDRColor.whiteColor()
-	var offset = 0.0
-	var specular = HDRColor()
-	var shininess = 0.0
-	var glow = HDRColor()
+	public var ambient = HDRColor.grayColor()
+	public var diffuse = HDRColor.whiteColor()
+	public var offset = 0.0
+	public var specular = HDRColor()
+	public var shininess = 0.0
+	public var glow = HDRColor()
 	
 	public static func blueColors() -> ColorData {
 		var result = ColorData()
 		result.diffuse = HDRColor.blueColor()
 		
 		return result
+	}
+	public static func whiteColors() -> ColorData {
+		return ColorData()
 	}
 }
 
@@ -39,18 +42,18 @@ public struct HDRColor : Equatable, CustomStringConvertible {
 	var r = 0.0, g = 0.0, b = 0.0
 	
 	public var description: String {
-		return "\(Int(r * 256))R \(Int(g * 256))G \(Int(b * 256))B"
+		return "\(Int(r * 255))R \(Int(g * 255))G \(Int(b * 255))B"
 	}
 	
-	static func whiteColor() -> HDRColor { return HDRColor(r: 1, g: 1, b: 1) }
-	static func blackColor() -> HDRColor { return HDRColor(r: 0, g: 0, b: 0) }
-	static func grayColor() -> HDRColor { return HDRColor(r: 0.5, g: 0.5, b: 0.5) }
-	static func redColor() -> HDRColor { return HDRColor(r: 1, g: 0, b: 0) }
-	static func greenColor() -> HDRColor { return HDRColor(r: 0, g: 1, b: 0) }
-	static func blueColor() -> HDRColor { return HDRColor(r: 0, g: 0, b: 1) }
-	static func yellowColor() -> HDRColor { return HDRColor(r: 1, g: 1, b: 0) }
-	static func magentaColor() -> HDRColor { return HDRColor(r: 1, g: 0, b: 1) }
-	static func cyanColor() -> HDRColor { return HDRColor(r: 0, g: 1, b: 1) }
+	public static func whiteColor() -> HDRColor { return HDRColor(r: 1, g: 1, b: 1) }
+	public static func blackColor() -> HDRColor { return HDRColor(r: 0, g: 0, b: 0) }
+	public static func grayColor() -> HDRColor { return HDRColor(r: 0.5, g: 0.5, b: 0.5) }
+	public static func redColor() -> HDRColor { return HDRColor(r: 1, g: 0, b: 0) }
+	public static func greenColor() -> HDRColor { return HDRColor(r: 0, g: 1, b: 0) }
+	public static func blueColor() -> HDRColor { return HDRColor(r: 0, g: 0, b: 1) }
+	public static func yellowColor() -> HDRColor { return HDRColor(r: 1, g: 1, b: 0) }
+	public static func magentaColor() -> HDRColor { return HDRColor(r: 1, g: 0, b: 1) }
+	public static func cyanColor() -> HDRColor { return HDRColor(r: 0, g: 1, b: 1) }
 }
 
 public func *(lhs: Double, rhs: HDRColor) -> HDRColor { return HDRColor(r: lhs * rhs.r, g: lhs * rhs.g, b: lhs * rhs.g) }
@@ -79,9 +82,9 @@ public func imageFromARGB32Bitmap(pixels:[HDRColor], width:Int, height:Int) -> N
 	var data = pixels.map {
 		(let color) -> argb in
 		let alpha = UInt8(255)
-		let red = UInt8(max(min(color.r * 255, 255.0), 0.0))
-		let green = UInt8(max(min(color.g * 255, 255.0), 0.0))
-		let blue = UInt8(max(min(color.b * 255, 255.0), 0.0))
+		let red = UInt8(max(min(color.r * 255, 255), 0))
+		let green = UInt8(max(min(color.g * 255, 255), 0))
+		let blue = UInt8(max(min(color.b * 255, 255), 0))
 		
 		return argb(a: alpha, r: red, g: green, b: blue)
 	}

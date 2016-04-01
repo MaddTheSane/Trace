@@ -8,7 +8,7 @@
 
 import Cocoa
 
-public protocol Shape : class, Translatable {
+public protocol Shape : class {
 	var colors: ColorData { get set }
 	var position: Vector3D { get set }
 	

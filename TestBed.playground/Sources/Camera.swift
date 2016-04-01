@@ -8,52 +8,14 @@
 
 import Cocoa
 
-public class cameraView : NSImageView {
-	var rect = NSRect()
-	var cam = Camera()
-	var scene: Scene?
-	
-	override init(frame frameRect: NSRect) {
-		rect = frameRect
-		scene = Scene(ambient: HDRColor.grayColor())
-		
-		scene!.addLight(DirectLight(color: HDRColor.whiteColor(), direction: Vector3D(x: 1, y: 1, z: 1)))
-		
-		var colors = ColorData()
-		colors.diffuse = HDRColor.blueColor()
-		
-		scene!.addShape(Sphere(colors: colors, position: Vector3D(x: 10, y: 0, z: 0), radius: 9)!)
-		//scene.addShape(Plane(colors: ColorData(), position: Vector3D(x: 20,y: 0,z: 0), normal: Vector3D(x: -1,y: 0,z: 0)))
-		
-		scene!.shapes[0].colors.ambient = HDRColor.grayColor()
-		
-		super.init(frame: frameRect)
-	}
-
-	required public init?(coder aDecoder: NSCoder) {
-		rect = NSRect()
-		
-		super.init(coder: aDecoder)
-	}
-	
-	override public var image: NSImage? {
-		get {
-			return cam.capture(scene!, resolution: (200,200), SSAA: 1)
-		}
-		set {
-			self.image = newValue
-		}
-	}
-}
-
-public class Camera : NSObject, Translatable {
-	public var position: Vector3D
+public class Camera : NSObject {
+	var position: Vector3D
 	var frustrum: (near: Double, far: Double)
 	var lookDirection: Vector3D
 	var upDirection: Vector3D
-	public var FOV = 90.0
+	var FOV = 90.0
 	
-	public init(position pos:Vector3D = Vector3D(), lookDir dir:Vector3D = Vector3D(x:1,y:0,z:0), nearClip near:Double = 1.0, farClip far:Double = 1000.0, upDir up:Vector3D = Vector3D(x:0,y:1,z:0)) {
+	public init(position pos:Vector3D = Vector3D(), lookDir dir:Vector3D = Vector3D(1,0,0), nearClip near:Double = 1.0, farClip far:Double = 1000.0, upDir up:Vector3D = Vector3D(0,1,0)) {
 		position = pos
 		lookDirection = dir
 		frustrum = (near, far)
@@ -61,7 +23,7 @@ public class Camera : NSObject, Translatable {
 		super.init()
 	}
 	
-	public func preview(scene: Scene, resolution res: (x: UInt, y: UInt)) -> NSImage {
+	public func preview(resolution res: (x: UInt, y: UInt)) -> NSImage {
 		// calculate the screen dimensions relative to the eye vector given the FOV
 		let uWidth = tan((FOV / 2.0) * (M_PI / 180.0)), vHeight = (Double(res.y) / Double(res.x)) * uWidth
 		
@@ -164,10 +126,10 @@ public class Camera : NSObject, Translatable {
 			// shadow check
 			if l.illuminated(point) && !obstructed(Ray(o: point, d: directionToLight), on: shape, inScene: scene, from: l) {
 				let product = shape.getNormal(point) • directionToLight
-				let offset = (product + shape.getOffset())/(1 + shape.getOffset())
+				let calculatedOffset = (product + shape.getOffset())/(1 + shape.getOffset())
 				
 				// color from direct diffuse illumination
-				diffuse += (shape.getDiffuse() * l.getColor()) * max(offset, 0.0)
+				diffuse += shape.getDiffuse() * l.getColor() * max(calculatedOffset, 0.0)
 				
 				if product > 0.0 {
 					let halfway = (from + l.normalToLight(point)).unit()
