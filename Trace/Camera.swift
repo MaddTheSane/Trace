@@ -13,7 +13,7 @@ public class cameraView : NSImageView {
 	var cam = Camera()
 	var scene: Scene?
 	
-	override init(frame frameRect: NSRect) {
+	override public init(frame frameRect: NSRect) {
 		rect = frameRect
 		scene = Scene(ambient: HDRColor.grayColor())
 		
@@ -32,6 +32,17 @@ public class cameraView : NSImageView {
 
 	required public init?(coder aDecoder: NSCoder) {
 		rect = NSRect()
+		scene = Scene(ambient: HDRColor.grayColor())
+		
+		scene!.addLight(DirectLight(color: HDRColor.whiteColor(), direction: Vector3D(x: 1, y: 1, z: 1)))
+		
+		var colors = ColorData()
+		colors.diffuse = HDRColor.blueColor()
+		
+		scene!.addShape(Sphere(colors: colors, position: Vector3D(x: 10, y: 0, z: 0), radius: 9)!)
+		//scene.addShape(Plane(colors: ColorData(), position: Vector3D(x: 20,y: 0,z: 0), normal: Vector3D(x: -1,y: 0,z: 0)))
+		
+		scene!.shapes[0].colors.ambient = HDRColor.grayColor()
 		
 		super.init(coder: aDecoder)
 	}

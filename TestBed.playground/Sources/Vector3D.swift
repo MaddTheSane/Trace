@@ -27,7 +27,7 @@ public struct Vector3D : Equatable, CustomStringConvertible {
 	}
 	
 	public var description: String {
-		return String(format: "(%.2f, %.2f, %.2f)", x, y, z)
+		return String(format: "(%.3f, %.3f, %.3f)", x, y, z)
 	}
 	
 	/// Absolute value of a Vector
