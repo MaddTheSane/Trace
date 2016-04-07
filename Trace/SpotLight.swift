@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import simd
 
 public class SpotLight : Light, Translatable {
 	public var color: HDRColor
@@ -29,5 +30,5 @@ public class SpotLight : Light, Translatable {
 		return angleBetween <= angle;
 	}
 	
-	public func distance(point: Vector3D) -> Double { return (position - point).len() }
+	public func distance(point: Vector3D) -> Double { return (position - point).length }
 }

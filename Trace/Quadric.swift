@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import simd
 
 public struct Equation {
 	var A = 0.0, B = 0.0, C = 0.0

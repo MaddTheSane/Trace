@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import simd
 
 public class Camera : NSObject, Translatable {
 	public var position: Vector3D
