@@ -11,8 +11,6 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-	var camView: cameraView!
-
 	func applicationDidFinishLaunching(aNotification: NSNotification) {
 		
 	}

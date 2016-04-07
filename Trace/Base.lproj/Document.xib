@@ -21,26 +21,20 @@
             <view key="contentView" id="gIp-Ho-8D9">
                 <rect key="frame" x="0.0" y="0.0" width="507" height="413"/>
                 <autoresizingMask key="autoresizingMask"/>
-                <subviews>
-                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MRu-ry-6AQ" customClass="cameraView" customModule="Trace" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="507" height="413"/>
-                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="Kla-oQ-IKZ">
-                            <connections>
-                                <binding destination="-3" name="value" keyPath="self.cell" id="vIV-x8-qnh"/>
-                            </connections>
-                        </imageCell>
-                    </imageView>
-                </subviews>
-                <constraints>
-                    <constraint firstItem="MRu-ry-6AQ" firstAttribute="top" secondItem="gIp-Ho-8D9" secondAttribute="top" id="8nV-Ee-XZ8"/>
-                    <constraint firstItem="MRu-ry-6AQ" firstAttribute="leading" secondItem="gIp-Ho-8D9" secondAttribute="leading" id="kyG-q1-qUl"/>
-                    <constraint firstAttribute="bottom" secondItem="MRu-ry-6AQ" secondAttribute="bottom" id="p9j-uJ-lvb"/>
-                    <constraint firstAttribute="trailing" secondItem="MRu-ry-6AQ" secondAttribute="trailing" id="rpo-2a-Yk9"/>
-                </constraints>
             </view>
             <connections>
                 <outlet property="delegate" destination="-2" id="0bl-1N-x8E"/>
             </connections>
         </window>
+        <viewController id="Dyc-o3-OPa" customClass="MasterViewController" customModule="Trace" customModuleProvider="target">
+            <imageView key="view" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="3Oe-IA-Qg0">
+                <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="NDJ-zU-cEN"/>
+            </imageView>
+            <connections>
+                <outlet property="ImageView" destination="3Oe-IA-Qg0" id="yxW-Tn-1jA"/>
+            </connections>
+        </viewController>
     </objects>
 </document>

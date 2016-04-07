@@ -26,6 +26,7 @@
 		C95ED11D1C9B299700208FF5 /* PointLight.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95ED1191C9B299700208FF5 /* PointLight.swift */; };
 		C95ED11E1C9B299700208FF5 /* SpotLight.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95ED11A1C9B299700208FF5 /* SpotLight.swift */; };
 		C95ED1201C9B38B100208FF5 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95ED11F1C9B38B100208FF5 /* Color.swift */; };
+		C9ECCC1B1CB579970093E950 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ECCC1A1CB579970093E950 /* MasterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,7 +63,7 @@
 		C95ED1191C9B299700208FF5 /* PointLight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointLight.swift; sourceTree = "<group>"; };
 		C95ED11A1C9B299700208FF5 /* SpotLight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotLight.swift; sourceTree = "<group>"; };
 		C95ED11F1C9B38B100208FF5 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
-		C95ED1221C9B6FDB00208FF5 /* TestBed.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = TestBed.playground; sourceTree = "<group>"; };
+		C9ECCC1A1CB579970093E950 /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,7 +87,6 @@
 		C95ED0D91C9B28F700208FF5 = {
 			isa = PBXGroup;
 			children = (
-				C95ED1221C9B6FDB00208FF5 /* TestBed.playground */,
 				C95ED0E41C9B28F700208FF5 /* Trace */,
 				C95ED0F91C9B28F700208FF5 /* TraceTests */,
 				C95ED0E31C9B28F700208FF5 /* Products */,
@@ -111,6 +111,7 @@
 				C95ED1071C9B294700208FF5 /* Camera.swift */,
 				C95ED0E51C9B28F700208FF5 /* AppDelegate.swift */,
 				C95ED0E71C9B28F700208FF5 /* Document.swift */,
+				C9ECCC1A1CB579970093E950 /* MasterViewController.swift */,
 				C95ED10B1C9B297000208FF5 /* Scene.swift */,
 				C95ED1091C9B295F00208FF5 /* Vector3D.swift */,
 				C95ED0E91C9B28F700208FF5 /* Document.xib */,
@@ -254,6 +255,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9ECCC1B1CB579970093E950 /* MasterViewController.swift in Sources */,
 				C95ED11D1C9B299700208FF5 /* PointLight.swift in Sources */,
 				C95ED1161C9B298600208FF5 /* Sphere.swift in Sources */,
 				C95ED0E81C9B28F700208FF5 /* Document.swift in Sources */,
